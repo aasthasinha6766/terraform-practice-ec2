@@ -1,0 +1,18 @@
+1. Update your system and install necessary dependencies to manage software properties and GPG keys:
+sudo apt update && sudo apt install -y gnupg software-properties-common curl
+
+2. Add the HashiCorp GPG key to your system's keyring:
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
+3. Add the official HashiCorp repository to your system's APT sources:
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+
+4. Update your package list to include the new repository's package information:
+sudo apt update
+
+5. Install Terraform:
+sudo apt install terraform
+
+6. Verify the installation:
+terraform --version
+
