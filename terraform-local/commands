@@ -1,0 +1,13 @@
+vi main.tf
+ls -lrth
+terraform init
+terraform validate
+terraform plan
+terraform apply
+ls -lrth
+cat automate.txt
+git add .
+git commit -m "first .tf file for local"
+git push origin main
+git status
+history
